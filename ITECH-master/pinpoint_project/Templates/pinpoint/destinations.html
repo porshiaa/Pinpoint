@@ -1,0 +1,175 @@
+{% extends 'pinpoint/base.html' %}
+{% load staticfiles %} <!-- New line -->
+
+
+<!--  add CSS LINK IN THE TITLE BLOCK -->
+{% block title_block %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+
+
+
+<meta charset="UTF-8">
+<title>Destinations</title>
+
+<!--Responsive search bar-->
+<script>
+			$(document).ready(function(){
+				$("#search").on("keyup", function() {
+					var value = $(this).val().toLowerCase();
+					$("#destinations .card").filter(function() {
+						$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+					});
+				});
+			});
+			</script>
+
+<script>
+
+		jQuery(document).ready(function($) {
+			// <!--DROP DOWN - WORKIN-->
+			$("#contselect").on('change', function() {
+				var value = this.value;
+
+				$("#destinations .card").filter(function() {
+						$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+				});
+			});
+
+			// <!--TODO CLIMATE RADIO - workin (but searching all words)-->
+			$(function climate() {
+				$('input[name="climate"]').change(function() {
+					var value = this.value;
+					if (value == "none" ) {
+					$("#destinations .card").toggle()
+					}
+					else {
+					$("#destinations .card").filter(function() {
+						$(this).toggle($(this).text().indexOf(value) > -1)
+					});
+					}
+				});
+			});
+
+			// <!--BUDGET RADIO - WORKIN (had to add modifiers, so £££ techinically contains £-->
+			// <!--TODO UPDATE DATABASE WITH MODIFIERS-->
+			$(function budget() {
+				$('input[name="budget"]').change(function() {
+					var value = this.value;
+					if (value == "none" ) {
+					$("#destinations .card").toggle()
+					}
+
+					else {
+					$("#destinations .card").filter(function() {
+						$(this).toggle($(this).text().indexOf(value) > -1)
+					});
+					}
+				});
+			});
+
+			// <!--ACTIVITIES CHECKBOX - NOT WORKIN -->
+				$("#activities :checkbox").click(function() {
+
+				   $("#activities :checkbox:checked").each(function() {
+						var value = this.value;
+					  $("#destinations .card").filter(function() {
+						$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+						});
+				   });
+				});
+		});
+	</script>
+
+{% endblock %}
+
+{% block body_block %}
+
+
+<div class="flex-container">
+	<div class = "leftcolumn">
+		<h1>Filter by:</h1>
+
+		<h2>Preferred climate</h2>
+		<div class = "filters">
+			<input name="climate" type="radio" id="cold" value="cold">
+			<label for="cold">Cold</label> <br>
+			<input name="climate" type="radio" id="sunny" value="sunny">
+			<label for="sunny">Sunny</label> <br>
+			<input name="climate" type="radio" id="mild" value="mild">
+			<label for="mild">Mild</label> <br>
+			<input name="climate" type="radio" id="none" value="none">
+			<label for="none">No preference</label> <br>
+		</div>
+
+		<h2>Budget</h2>
+		<div class = "filters">
+			<input name="budget" type="radio" id="cheap" value="_£_">
+			<label for="cheap">£</label> <br>
+			<input name="budget" type="radio" id="mid" value="_££_">
+			<label for="mid">££</label> <br>
+			<input name="budget" type="radio" id="expensive" value="_£££_">
+			<label for="expensive">£££</label> <br>
+			<input name="budget" type="radio" id="nop" value="none">
+			<label for="nop">No preference</label> <br>
+		</div>
+
+		<h2>Continent</h2>
+		<div class = "contselect">
+			<select id="contselect" name="contselect">
+				<option value="all">All</option>
+				<option value="europe">Europe</option>
+				<option value = "africa">Africa</option>
+				<option value= "asia">Asia</option>
+				<option value="america">Americas</option>
+			</select>
+		</div>
+
+		<div class="activities" id="activities">
+			<h2>Activities</h2>
+			<label class="container">Outdoors<input type="checkbox" value="outdoors">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">Nightlife<input type="checkbox" value="nightlife">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">Culture<input type="checkbox" value="culture">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">Sports<input type="checkbox" value="sports">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">Beach<input type="checkbox" value="beach">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+
+	</div>
+
+	<div class="mainbox">
+		<span class="label results">Search results</span>
+
+		<form class="search">
+			<input type="text" id="search" placeholder="Search for..." required>
+			<input type="submit" value="go" id="submit">
+		</form>
+
+
+
+		<div id="destinations">
+			{% for item in islands %}
+			<div class="card" >
+				<img src={{item.image}}>
+				<h1>{{item.name}}</h1>
+				<h2>{{item.location}}</h2>
+				<h3>{{item.budget}}</h3>
+				<h3>{{item.climate}}</h3>
+				<h3>{{item.activities}}</h3>
+				<p>{{item.description|truncatechars:165}}</p>
+				<button type="button"><a href="{% url 'show_island' item.slug %}">Discover More</a></button>
+			</div>
+			{% endfor %}
+
+			{% endblock %}

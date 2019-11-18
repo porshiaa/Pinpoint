@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+
+<html>
+{% block head_block %}
+    <head lang="en">
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../static/CSS/base.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+
+{% endblock %}
+
+{% block title_block %}
+
+    <title>Pinpoint</title>
+
+
+{% endblock %}
+
+
+
+</head>
+
+<body>
+
+
+<h1 id="header">Pinpoint</h1>
+<div id="navbar">
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'quiz' %}">Quiz</a></li>
+        
+        <li class="dropdown">
+            <a href="{% url 'destinations' %}" ,"javascript:void(0)" class="dropbtn" >Destinations</a>
+            <div class="dropdown-content">
+                {% for item in islands %}
+                <a href="{% url 'show_island' item.slug %}">{{item.name}}</a>
+                {% endfor %}
+            </div>
+            
+        </li>
+        <li><a href="{% url 'booking' %}">Booking Page</a></li>
+    </ul>
+</div>
+
+
+{% block body_block %}
+
+
+
+{% endblock %}
+
+
+
+    {% block login_block %}
+        <ul>
+
+            {% if user.is_authenticated %}
+
+                <li><a href="{% url 'restricted' %}">My Account</a></li>
+
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+
+            {% else %}
+
+                <li><a href="{% url 'login' %}">Sign In</a></li>
+
+                <li><a href="{% url 'register' %}">Sign Up</a></li>
+
+            {% endif %}
+
+
+        </ul>
+
+    {% endblock %}
+
+</div>
+
+<hr/>
+
+</body>
+
+</html>

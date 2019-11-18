@@ -1,0 +1,157 @@
+#header{
+    font-family: 'Amatic SC', cursive;
+    font-size: 90px;
+    text-shadow: 1px 1px white;
+    border-bottom: dashed;
+    text-align: center;
+    width:40%;
+    margin: auto;
+
+}
+body{
+    background-image: url("https://static.wixstatic.com/media/cef173_0f545a59999b4f8a9bf13a131e4453c2~mv2_d_2469_1640_s_2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    line-height: 1.6;
+
+}
+
+ul {
+    list-style-type: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin:auto;
+
+}
+
+li {
+    display: inline-block;
+    text-align:center;
+    /*position: sticky;*/
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: rgba(255,255,255,0.7);
+}
+
+
+li a, .dropbtn {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+#navbar{
+    width:40%;
+    margin: auto;
+    padding-bottom:40px;
+
+}
+
+.quizbox{
+    background-color: rgba(255,255,255,0.7);
+    padding:20px;
+    width:40%;
+    margin:auto;
+}
+
+#quizhead{
+    font-family:'Amatic SC', cursive;
+    font-style: italic;
+    font-weight: lighter;
+    color:rgb(103, 111, 124);
+    margin: auto;
+    text-align: center;
+
+
+}
+
+
+.button  {
+    /* background-color: #24afa8; */
+  /*  background-size: cover;*/
+    border: none;
+    border-radius: 50%;
+    color: white;
+    padding: 70px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit- transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    height: 250px;
+    width: 250px;
+
+}
+
+.button: hover {
+
+  color: white;
+
+}
+
+#button_1 {
+  background-image: url(https://dailytravelpill.com/wp-content/uploads/2018/07/tibumana-waterfall-bali-6.jpg);
+  background-size: cover;
+
+}
+
+
+#button_2 {
+  background-image: url(https://www.usnews.com/dims4/USNEWS/7dcc98a/2147483647/thumbnail/640x420/quality/85/?url=http%3A%2F%2Fcom-usnews-beam-media.s3.amazonaws.com%2F36%2F95%2F39491eb34abe80448e9e62667d79%2Ftravel2.jpg);
+   background-size: cover;
+
+}
+
+.fa {
+  font-size: 70px;
+}
+
+#locator_1 {
+   position: absolute; visibility: visible; left: 400px; top: 260px; z-index: 200;
+
+}
+
+
+#locator_2 {
+   position: absolute; visibility: visible; right: 400px; top: 260px; z-index: 200;
+}

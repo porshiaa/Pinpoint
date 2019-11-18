@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+{% extends 'pinpoint/base.html' %}
+
+{% load staticfiles %} <!-- New line -->
+
+
+
+<!--  add CSS LINK IN THE TITLE BLOCK -->
+
+{% block title_block %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../static/CSS/base.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+
+
+<title>Profile</title>
+
+{% endblock %}
+
+
+
+{% block body_block %}
+
+{% if user.is_authenticated %}
+
+<div id="profilebox">
+	<div id="profilepic">
+		<img src={{user.userprofile.picture.url}}>
+	</div>
+
+	<div id="userinfo">
+		<h1>{{user.get_username}}</h1>
+	</div>
+
+	<div id="pinned">
+		<h2>Pinned Islands</h2>
+		<ul><li>Island 1</li>
+			<li>Island 2</li>
+			<li>Island 3</li>
+		</ul>
+	</div>
+
+</div>
+
+
+</div>
+{% endif %}
+
+
+
+{% endblock %}

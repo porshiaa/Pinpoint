@@ -1,0 +1,25 @@
+{% extends 'pinpoint/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    <title id="title" > Sign-Up</title>
+{% endblock %}
+
+{% block body_block %}
+    <h1> Register Here</h1>
+    {% if registered %}
+         <strong>Thank you for registering!</strong>
+        <a href="{% url '/pinpoint/home' %}">Return to the homepage.</a>
+    {% else %}
+        Rango says: <strong>register here!</strong><br />
+        <form id="user_form" method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
+
+            {%  csrf_token %}
+
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            <input type="submit" name="submit" value="Register" />
+        </form>
+
+    {% endif %}
+{%  endblock %}

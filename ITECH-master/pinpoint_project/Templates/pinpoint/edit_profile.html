@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+{% extends 'pinpoint/base.html' %}
+
+{% load staticfiles %} <!-- New line -->
+
+
+
+<!--  add CSS LINK IN THE TITLE BLOCK -->
+
+{% block title_block %}
+
+
+<title>Profile</title>
+
+{% endblock %}
+
+
+
+{% block body_block %}
+
+{% if user.is_authenticated %}
+
+<div id="profilebox">
+    <div id="profilepic">
+        <img src="https://cnam.ca/wp-content/uploads/2018/06/default-profile.gif">
+    </div>
+
+    <div id="userinfo">
+        <h1>{{user.get_username}}</h1>
+    </div>
+
+    <div id="pinned">
+        <h2>Pinned Islands</h2>
+        <ul><li>Island 1</li>
+            <li>Island 2</li>
+            <li>Island 3</li>
+        </ul>
+    </div>
+
+</div>
+
+
+</div>
+{% endif %}
+
+
+
+{% endblock %}

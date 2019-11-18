@@ -1,0 +1,568 @@
+{% extends 'pinpoint/base.html' %}
+
+{% load staticfiles %} <!-- New line -->
+
+    
+
+<!--  add CSS LINK IN THE TITLE BLOCK -->
+
+{% block title_block %}
+
+
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" type="text/css" href="../../static/CSS/quiz.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+	<title>Pinpoint - Quiz</title>
+
+			
+
+{% endblock %}
+
+
+
+{% block body_block %}
+
+
+
+<div class = "quizbox">
+
+	<h1 id="quizhead">Take our quiz and discover your next adventure</h1><br>
+
+	<h2 class="questions">What kind of songs are on your holiday playlist?</h2>
+
+	<div>
+
+  <input name="music" type="radio" id="edm" value="4">
+
+  <label for="edm">EDM all day, every day</label>
+
+</div>
+
+<div>
+
+  <input name="music" type="radio" id="rock" value="3">
+
+  <label for="rock">Atmospheric rock and indie tunes</label>
+
+</div>
+
+<div>
+
+  <input name="music" type="radio" id="pop" value="2">
+
+  <label for="pop">Cheesy pop hits</label>
+
+</div>
+
+<div>
+
+  <input name="music" type="radio" id="inst" value="1">
+
+  <label for="inst">Calming instrumentals</label>
+
+</div><br>
+
+<h2 class="questions">Surprise! You’ve got the day off work. What are you doing?</h2>
+
+	<div>
+
+  <input name="day" type="radio" id="bed" value="1">
+
+  <label for="bed">Catching up on quality time with your bed</label>
+
+</div>
+
+<div>
+
+  <input name="day" type="radio" id="chill" value="2">
+
+  <label for="chill">Chilling with friends over some good food and wine</label>
+
+</div>
+
+<div>
+
+  <input name="day" type="radio" id="party" value="4">
+
+  <label for="party">Celebrating! Any excuse for a party</label>
+
+</div>
+
+<div>
+
+  <input name="day" type="radio" id="art" value="3">
+
+  <label for="art">Checking out that new art gallery that just opened in town</label>
+
+</div><br>
+
+<h2 class="questions">What’s your social media app of choice?</h2>
+
+	<div>
+
+  <input name="sns" type="radio" id="sc" value="4">
+
+  <label for="sc">Snapchat</label>
+
+</div>
+
+<div>
+
+  <input name="sns" type="radio" id="ig" value="3">
+
+  <label for="ig">Instagram</label>
+
+</div>
+
+<div>
+
+  <input name="sns" type="radio" id="fb" value="2">
+
+  <label for="fb">Facebook</label>
+
+</div>
+
+<div>
+
+  <input name="sns" type="radio" id="hip" value="1">
+
+  <label for="hip">I don’t do social media, I live in the moment</label>
+
+</div><br>
+
+<h2 class="questions">It’s your last meal, what are you ordering?</h2>
+
+<div>
+
+  <input name="food" type="radio" id="world" value="3">
+
+  <label for="world">A range of dishes from around the world
+
+</label>
+
+</div>
+
+<div>
+
+  <input name="food" type="radio" id="burger" value="1">
+
+  <label for="burger">A juicy burger and fries, classic</label>
+
+</div>
+
+<div>
+
+  <input name="food" type="radio" id="gourmet" value="4">
+
+  <label for="gourmet">A full gourmet course prepared by the best, à la carte</label>
+
+</div>
+
+<div>
+
+  <input name="food" type="radio" id="organic" value="2">
+
+  <label for="organic">Something rustic and homemade, organic of course</label>
+
+</div><br>
+
+<h2 class="questions">How would you describe your sense of style?</h2>
+
+
+
+<div>
+
+  <input name="style" type="radio" id="classic" value="3">
+
+  <label for="classic">Classic and elegant, with a few luxurious touches</label>
+
+</div>
+
+<div>
+
+  <input name="style" type="radio" id="sporty" value="2">
+
+  <label for="sporty">Simple, practical and sporty</label>
+
+</div>
+
+<div>
+
+  <input name="style" type="radio" id="whatever" value="1">
+
+  <label for="whatever">Whatever you happen to pull out of your wardrobe first</label>
+
+</div>
+
+<div>
+
+  <input name="style" type="radio" id="cute" value="4">
+
+  <label for="cute">Cute and colourful, lots of accessories</label>
+
+</div><br>
+
+<h2 class="questions">What kind of movie would you rather watch?</h2>
+
+<div>
+
+  <input name="movie" type="radio" id="oscars" value="4">
+
+  <label for="oscars">Whatever won all the Oscars this year is a good bet</label>
+
+</div>
+
+<div>
+
+  <input name="movie" type="radio" id="action" value="3">
+
+  <label for="action">Action or a thriller with loads of explosions and excitement</label>
+
+</div>
+
+<div>
+
+  <input name="movie" type="radio" id="funny" value="2">
+
+  <label for="funny">Something funny and light is always good</label>
+
+</div>
+
+<div>
+
+  <input name="movie" type="radio" id="doc" value="1">
+
+  <label for="doc">A thought-provoking documentary feature</label>
+
+</div>
+
+<br>
+
+<h2 class="questions">How do you take your coffee?</h2>
+
+<div>
+
+  <input name="coffee" type="radio" id="black" value="4">
+
+  <label for="black">Black, like my soul</label>
+
+</div>
+
+<div>
+
+  <input name="coffee" type="radio" id="syrup" value="3">
+
+  <label for="syrup">Lattes loaded with flavoured syrup</label>
+
+</div>
+
+<div>
+
+  <input name="coffee" type="radio" id="white" value="1">
+
+  <label for="white">A simple flat white</label>
+
+</div>
+
+<div>
+
+  <input name="coffee" type="radio" id="milk" value="2">
+
+  <label for="milk">Coffee? I’m more of a chocolate milk person</label>
+
+</div>
+
+<br>
+
+<h2 class="questions">If you could be reborn as an animal which would you choose?</h2>
+
+<div>
+
+  <input name="animal" type="radio" id="bird" value="2">
+
+  <label for="bird">A bird - I’d never have to pay plane fares again</label>
+
+</div>
+
+<div>
+
+  <input name="animal" type="radio" id="cat" value="3">
+
+  <label for="cat">A cat, eating and sleeping all day sounds good</label>
+
+</div>
+
+<div>
+
+  <input name="animal" type="radio" id="lion" value="4">
+
+  <label for="lion">A lion - go big or go home</label>
+
+</div>
+
+<div>
+
+  <input name="animal" type="radio" id="dog" value="1">
+
+  <label for="dog">Dogs have the most fun!</label>
+
+</div>
+
+<br>
+
+<h2 class="questions">What’s your favourite season?</h2>
+
+<div>
+
+  <input name="season"  type="radio" id="winter" value="1">
+
+  <label for="winter">Nothing beats a crisp, snowy winter</label>
+
+</div>
+
+<div>
+
+  <input name="season" type="radio" id="autumn" value="2">
+
+  <label for="autumn">Autumn - pretty leaves and pumpkin spice lattes</label>
+
+</div>
+
+<div>
+
+  <input name="season" type="radio" id="spring" value="4">
+
+  <label for="spring">Spring, when everything comes into bloom</label>
+
+</div>
+
+<div>
+
+  <input name="season" type="radio" id="summer" value="3">
+
+  <label for="summer">Balmy summer nights are where it’s at</label>
+
+</div>
+
+<br>
+
+<h2 class="questions">What’s your ideal first date?</h2>
+
+<div>
+
+  <input name="date" type="radio" id="movie" value="2">
+
+  <label for="movie">Keep it simple, dinner and a movie</label>
+
+</div>
+
+<div>
+
+  <input name="date" type="radio" id="hiking" value="1">
+
+  <label for="hiking">An outdoors adventure like hiking</label>
+
+</div>
+
+<div>
+
+  <input name="date" type="radio" id="museum" value="3">
+
+  <label for="museum">Museum visit and a cosy cafe</label>
+
+</div>
+
+<div>
+
+  <input name="date" type="radio" id="bar" value="4">
+
+  <label for="bar">Drinks at a swanky city bar</label>
+
+</div>
+
+<div>
+
+<br>
+
+
+
+
+
+{#    *********************#}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+
+    <script>
+
+   function CheckIfFilled()
+
+   {
+
+       var music = document.querySelector("input[name=music ]:checked");
+
+       var day = document.querySelector("input[name=day ]:checked");
+
+       var sns = document.querySelector("input[name= sns]:checked");
+
+       var food = document.querySelector("input[name=food ]:checked");
+
+       var style = document.querySelector("input[name=style ]:checked");
+
+       var movie = document.querySelector("input[name=movie ]:checked");
+
+       var coffee = document.querySelector("input[name=coffee ]:checked");
+
+       var animal = document.querySelector("input[name=animal ]:checked");
+
+       var season = document.querySelector("input[name=season ]:checked");
+
+       var date = document.querySelector("input[name=date ]:checked");
+
+
+
+       if(music && day && sns && food && style && movie && coffee && animal && season && date) {
+
+          $('button').click(function(){
+
+                var total =0;
+
+                $.each($("input[type = radio ]:checked"), function(){
+
+                    total += parseFloat($(this).val());
+
+                });
+
+
+
+                ReturnIsland(total);
+
+            });
+
+       } else {
+
+           alert("You missed a question! Please select an answer.");
+
+       }
+
+
+
+    }
+
+    </script>
+
+
+
+
+
+    <script>
+
+    function ReturnIsland(number) {
+
+        var island = 'noIsland';
+
+        if (number  <= 13) {
+
+            island = 'iceland';
+
+
+
+        } else if (number  > 13 && number <= 16) {
+
+            island = 'svalbard';
+
+
+
+        } else if (number > 16 && number <= 19) {
+
+            island = 'galapagos';
+
+
+
+        } else if (number  > 19 && number <= 22) {
+
+            island = 'mauritius';
+
+
+
+        } else if (number  > 22 && number <= 25) {
+
+            island = 'iceland';
+
+
+
+        } else if (number  > 25 && number <= 28) {
+
+            island = 'raja-ampat';
+
+
+
+        } else if (number  > 28 && number <= 31) {
+
+            island = 'st-lucia';
+
+
+
+        } else if (number  > 31 && number <= 34) {
+
+            island = 'sri-lanka';
+
+
+
+        } else if (number  > 34 && number <= 37) {
+
+            island = 'malta';
+
+
+
+        } else if (number  > 37) {
+
+            island = 'hong-kong';
+
+
+
+        }
+
+        var url = 'http://aisd9561.pythonanywhere.com/pinpoint/island_page/'+island;
+        window.location.href = (url);
+        return island;
+
+    }
+
+    </script>
+
+
+
+
+
+
+
+
+
+<form method='post'>
+
+    {{ form.as_p }}
+
+    {% csrf_token %}
+
+{#    <input type='submit' value='submit'>#}
+
+{#    TODO insert slug for island name #}
+
+</form>
+
+
+<button onclick="CheckIfFilled()" type="button" >Submit</a></button>
+</div>
+
+</div>
+
+
+{% endblock %}

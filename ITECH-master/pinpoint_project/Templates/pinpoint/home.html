@@ -1,0 +1,44 @@
+{% extends 'pinpoint/base.html' %}
+{% load staticfiles %} <!-- New line -->
+
+    <title>PINPOINT</title>
+<!--  add CSS LINK IN THE TITLE BLOCK-->
+{% block title_block %}
+    <link rel="stylesheet" type="text/css" href="../../static/CSS/home.css">
+{% endblock %}
+
+{% block body_block %}
+    <section class="page" id="body">
+
+    <div id="subtitle" class="Text">
+        <h1 class="font_0" style="text-align:center"><span style="color:#FFFFFF;"><span style="font-family:amatic sc,cursive">CHOOSE YOUR ADVENTURE</span></span></h1>
+    </div>
+
+<div id="locator_1">
+    <!-- <i class="fas fa-chevron-down"></i> -->
+    <i class="fa fa-angle-double-down"></i>
+</div>
+
+<div id="locator_2">
+    <!-- <i class="fas fa-chevron-down"></i> -->
+    <i class="fa fa-angle-double-down"></i>
+  </div>
+
+
+    <section class="button" id="button_1" style="margin-left: 180px" >
+
+        <!-- <div id="button_1" class="Text"> -->
+            <h1 class="font_0" style="font-size:42px; text-align:center"><span style="font-size:42px"><span style="font-family:amatic sc,cursive"><span class="color_11"><a href="{% url 'destinations' %}" >SEARCH DESTINATIONS</a></span></span></span></h1>
+        <!-- </div> -->
+
+    </section>
+
+    <section class="button" id="button_2" style="margin-left: 100px" >
+
+        <!-- <div id="button_2" class="Text"> -->
+            <h1 class="font_0" style="font-size:42px; text-align:center"><span style="font-size:42px"><span style="font-family:amatic sc,cursive"><span class="color_11"><a href="{% url 'quiz' %}">PERSONALITY QUIZ</a></span></span></span></h1>
+        <!-- </div> -->
+
+    </section>
+
+{% endblock %}
